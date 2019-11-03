@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>World Window</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <ul class="slider">
+        <li>
+            <input type="radio" id="ca" name="slide" checked="checked">
+            <label for="ca"></label>
+            <img src="assets/img/ca.svg" alt="ca">
+        </li>
+        <li>
+            <input type="radio" id="au" name="slide">
+            <label for="au"></label>
+            <img src="assets/img/au.svg" alt="au">
+        </li>
+        <li>
+            <input type="radio" id="jp" name="slide">
+            <label for="jp"></label>
+            <img src="assets/img/jp.svg" alt="jp">
+        </li>
+        <li>
+            <input type="radio" id="cn" name="slide">
+            <label for="cn"></label>
+            <img src="assets/img/cn.svg" alt="cn">
+        </li>
+        <li>
+            <input type="radio" id="ru" name="slide">
+            <label for="ru"></label>
+            <img src="assets/img/ru.svg" alt="ru">
+        </li>
+        <li>
+            <input type="radio" id="in" name="slide">
+            <label for="in"></label>
+            <img src="assets/img/in.svg" alt="in">
+        </li>
+        <li>
+            <input type="radio" id="us" name="slide">
+            <label for="us"></label>
+            <img src="assets/img/us.svg" alt="us">
+        </li>
+        <li>
+            <input type="radio" id="mx" name="slide">
+            <label for="mx"></label>
+            <img src="assets/img/mx.svg" alt="mx">
+        </li>
+        <li>
+            <input type="radio" id="br" name="slide">
+            <label for="br"></label>
+            <img src="assets/img/br.svg" alt="br">
+        </li>
+        <li>
+            <input type="radio" id="ar" name="slide">
+            <label for="ar"></label>
+            <img src="assets/img/ar.svg" alt="ar">
+        </li>
+        <li>
+            <input type="radio" id="gb" name="slide">
+            <label for="gb"></label>
+            <img src="assets/img/gb.svg" alt="gb">
+        </li>
+        <li>
+            <input type="radio" id="se" name="slide">
+            <label for="se"></label>
+            <img src="assets/img/se.svg" alt="se">
+        </li>
+        <li>
+            <input type="radio" id="de" name="slide">
+            <label for="de"></label>
+            <img src="assets/img/de.svg" alt="de">
+        </li>
+        <li>
+            <input type="radio" id="fr" name="slide">
+            <label for="fr"></label>
+            <img src="assets/img/fr.svg" alt="fr">
+        </li>
+        <li>
+            <input type="radio" id="es" name="slide">
+            <label for="es"></label>
+            <img src="assets/img/es.svg" alt="es">
+        </li>
+        <li>
+            <input type="radio" id="it" name="slide">
+            <label for="it"></label>
+            <img src="assets/img/it.svg" alt="it">
+        </li>
+        <li>
+            <input type="radio" id="gr" name="slide">
+            <label for="gr"></label>
+            <img src="assets/img/gr.svg" alt="gr">
+        </li>
+        <li>
+            <input type="radio" id="tr" name="slide">
+            <label for="tr"></label>
+            <img src="assets/img/tr.svg" alt="tr">
+        </li>
+    </ul>
+
+    <a href="#" id="prev">Previous</a>
+    <a href="#" id="next">Next</a>
+
+    <script src="assets/js/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const radios = $('input:radio')
+
+            $('#next').click((e) => {
+                let checked = $('input:radio:checked')
+                let index = radios.index(checked)
+
+                if (index == (radios.length - 1)) {
+                    index = -1
+                }
+                radios.eq(index).removeAttr('checked');
+                radios.eq(index + 1).attr('checked', true).trigger('click');
+            })
+            
+            $('#prev').click((e) => {
+                let checked = $('input:radio:checked')
+                let index = radios.index(checked)
+
+                if ((index - 1) == -1) {
+                    index = 18
+                }
+                radios.eq(index).removeAttr('checked');
+                radios.eq(index - 1).attr('checked', true).trigger('click');
+            })
+        })
+    </script>
+</body>
+
+</html>
